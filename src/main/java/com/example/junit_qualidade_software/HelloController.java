@@ -35,8 +35,6 @@ public class HelloController {
 
         rbCpf.setOnMouseClicked(mouseEvent -> {
             tfData.setDisable(false);
-            //rbCnpj.disarm();
-            //rbCnpj.setSelected(false);
         });
 
         rbCnpj.setOnMouseClicked(mouseEvent -> {
