@@ -3,7 +3,9 @@ package com.example.junit_qualidade_software;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 public class HelloController {
@@ -11,39 +13,50 @@ public class HelloController {
     //private static HelloController instance;
     public HelloController() {}
 
-    /*
-    * TODO: achar onde o controller é instanciado.
-    * Aparentemente, tem uma chamada interna (new HelloController()) em algum lugar,
-    * então, ao usar o singleton, essa chamada é impedidda, pois deveria ser: HelloController.getInstance();.
-    */
-
-    /*public static synchronized HelloController getInstance() {
-        if (instance == null) {
-            instance = new HelloController();
-        }
-        return instance;
-    }*/
-
     @FXML
     private ComboBox<String> comboBox;
     @FXML
-    private TextField tfNome, tfCpf, tfEmail, tfSenha, tfConfirm_senha;
-    private String nome, cpf_cnpj, email, senha, confir_senha;
+    private TextField tfNome, tfCpf, tfEmail, tfSenha, tfConfirm_senha, tfData;
+    @FXML
+    private RadioButton rbCpf, rbCnpj;
+    @FXML
+    private CheckBox cbTermos;
+
+    private String nome, cpf_cnpj, genero,email, senha, confir_senha, data;
+
+    private boolean cpf, cnpj, termos;
 
     @FXML
     void initialize() {
         tfNome.requestFocus();
         ObservableList<String> items = FXCollections.observableArrayList("Item 1", "Item 2", "Item 3");
         comboBox.setItems(items);
+
+        rbCpf.setOnMouseClicked(mouseEvent -> {
+            tfData.setDisable(false);
+            //rbCnpj.disarm();
+            rbCnpj.setSelected(false);
+        });
+
+        rbCnpj.setOnMouseClicked(mouseEvent -> {
+            tfData.clear();
+            tfData.setDisable(true);
+            rbCpf.setSelected(false);
+        });
     }
 
     @FXML
     protected void onProntoButtonClick() {
         this.nome = tfNome.getText();
         this.cpf_cnpj = tfCpf.getText();
+        this.genero = comboBox.getValue();
         this.email = tfEmail.getText();
         this.senha = tfSenha.getText();
         this.confir_senha = tfConfirm_senha.getText();
+        this.data = tfData.getText();
+        this.cpf = rbCpf.isSelected();
+        this.cnpj = rbCnpj.isSelected();
+        this.termos = cbTermos.isSelected();
         TesteInterface.main(this);
     }
 
@@ -65,5 +78,25 @@ public class HelloController {
 
     public String getConfir_senha() {
         return confir_senha;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public boolean isCpf() {
+        return cpf;
+    }
+
+    public boolean isCnpj() {
+        return cnpj;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public boolean isTermos() {
+        return termos;
     }
 }

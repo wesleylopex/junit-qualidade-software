@@ -5,8 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
@@ -14,21 +12,17 @@
    <children>
       <Pane layoutY="-2.0" prefHeight="502.0" prefWidth="600.0" style="-fx-background-color: #fafafa; -fx-border-radius: 20px;">
          <children>
-            <TextField fx:id="tfData" layoutX="48.0" layoutY="221.0" prefHeight="26.0" prefWidth="226.0" promptText="Data de nascimento" />
+            <RadioButton fx:id="rbCpf" layoutX="47.0" layoutY="57.0" mnemonicParsing="false" text="Pessoa Fisica" />
+            <RadioButton fx:id="rbCnpj" layoutX="173.0" layoutY="57.0" mnemonicParsing="false" text="Pessoa Jurídica" />
             <TextField fx:id="tfNome" layoutX="48.0" layoutY="93.0" prefHeight="26.0" prefWidth="226.0" promptText="Nome" />
+            <TextField fx:id="tfCpf" layoutX="48.0" layoutY="135.0" prefHeight="26.0" prefWidth="226.0" promptText="CPF / CNPJ" />
+            <ComboBox fx:id="comboBox" layoutX="48.0" layoutY="177.0" prefHeight="26.0" prefWidth="226.0" promptText="Gênero" />
+            <TextField fx:id="tfData" layoutX="48.0" layoutY="221.0" prefHeight="26.0" prefWidth="226.0" promptText="Data de nascimento" />
             <TextField fx:id="tfEmail" layoutX="47.0" layoutY="265.0" prefHeight="26.0" prefWidth="226.0" promptText="E-mail" />
             <TextField fx:id="tfSenha" layoutX="48.0" layoutY="308.0" prefHeight="26.0" prefWidth="107.0" promptText="Senha" />
             <TextField fx:id="tfConfirm_senha" layoutX="166.0" layoutY="308.0" prefHeight="26.0" prefWidth="107.0" promptText="Confirmar senha" />
-            <Button fx:id="btPronto" layoutX="48.0" layoutY="384.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="226.0" text="Pronto" onAction="#onProntoButtonClick"/>
-            <TextField fx:id="tfCpf" layoutX="48.0" layoutY="135.0" prefHeight="26.0" prefWidth="226.0" promptText="CPF / CNPJ" />
-            <ComboBox fx:id="comboBox" layoutX="48.0" layoutY="177.0" prefHeight="26.0" prefWidth="226.0" promptText="Gênero" />
             <CheckBox fx:id="cbTermos" layoutX="48.0" layoutY="350.0" mnemonicParsing="false" text="Aceito os termos de uso" />
-            <!-- TODO: descobrir o motivo dessa imagem não aparecer -->
-            <ImageView fitHeight="502.0" fitWidth="286.0" layoutX="314.0" pickOnBounds="true">
-               <Image url="@../../../../../assets/image.jpeg" />
-            </ImageView>
-            <RadioButton fx:id="pessoaFisica" layoutX="47.0" layoutY="57.0" mnemonicParsing="false" text="Pessoa Fisica" />
-            <RadioButton fx:id="pessoaJuridica" layoutX="173.0" layoutY="57.0" mnemonicParsing="false" text="Pessoa Jurídica" />
+            <Button fx:id="btPronto" layoutX="48.0" layoutY="384.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="226.0" text="Pronto" onAction="#onProntoButtonClick"/>
          </children>
       </Pane>
    </children>
