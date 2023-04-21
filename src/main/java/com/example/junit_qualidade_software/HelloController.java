@@ -3,10 +3,7 @@ package com.example.junit_qualidade_software;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class HelloController {
 
@@ -28,20 +25,23 @@ public class HelloController {
 
     @FXML
     void initialize() {
-        tfNome.requestFocus();
         ObservableList<String> items = FXCollections.observableArrayList("Item 1", "Item 2", "Item 3");
         comboBox.setItems(items);
+
+        ToggleGroup group = new ToggleGroup();
+        rbCpf.setSelected(true);
+        rbCpf.setToggleGroup(group);
+        rbCnpj.setToggleGroup(group);
 
         rbCpf.setOnMouseClicked(mouseEvent -> {
             tfData.setDisable(false);
             //rbCnpj.disarm();
-            rbCnpj.setSelected(false);
+            //rbCnpj.setSelected(false);
         });
 
         rbCnpj.setOnMouseClicked(mouseEvent -> {
             tfData.clear();
             tfData.setDisable(true);
-            rbCpf.setSelected(false);
         });
     }
 
