@@ -12,17 +12,17 @@
    <children>
       <Pane layoutY="-2.0" prefHeight="502.0" prefWidth="600.0" style="-fx-background-color: #fafafa; -fx-border-radius: 20px;">
          <children>
-            <RadioButton fx:id="rbCpf" layoutX="47.0" layoutY="57.0" mnemonicParsing="false" text="Pessoa Fisica" />
-            <RadioButton fx:id="rbCnpj" layoutX="173.0" layoutY="57.0" mnemonicParsing="false" text="Pessoa Jurídica" />
-            <TextField fx:id="tfNome" layoutX="48.0" layoutY="93.0" prefHeight="26.0" prefWidth="226.0" promptText="Nome" />
-            <TextField fx:id="tfCpf" layoutX="48.0" layoutY="135.0" prefHeight="26.0" prefWidth="226.0" promptText="CPF / CNPJ" />
-            <ComboBox fx:id="comboBox" layoutX="48.0" layoutY="177.0" prefHeight="26.0" prefWidth="226.0" promptText="Gênero" />
-            <TextField fx:id="tfData" layoutX="48.0" layoutY="221.0" prefHeight="26.0" prefWidth="226.0" promptText="Data de nascimento" />
-            <TextField fx:id="tfEmail" layoutX="47.0" layoutY="265.0" prefHeight="26.0" prefWidth="226.0" promptText="E-mail" />
-            <TextField fx:id="tfSenha" layoutX="48.0" layoutY="308.0" prefHeight="26.0" prefWidth="107.0" promptText="Senha" />
-            <TextField fx:id="tfConfirm_senha" layoutX="166.0" layoutY="308.0" prefHeight="26.0" prefWidth="107.0" promptText="Confirmar senha" />
-            <CheckBox fx:id="cbTermos" layoutX="48.0" layoutY="350.0" mnemonicParsing="false" text="Aceito os termos de uso" />
-            <Button fx:id="btPronto" layoutX="48.0" layoutY="384.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="226.0" text="Pronto" onAction="#onProntoButtonClick"/>
+            <RadioButton fx:id="rbCpf" layoutX="187.0" layoutY="75.0" mnemonicParsing="false" text="Pessoa Fisica" />
+            <RadioButton fx:id="rbCnpj" layoutX="313.0" layoutY="75.0" mnemonicParsing="false" text="Pessoa Jurídica" />
+            <TextField fx:id="tfNome" layoutX="188.0" layoutY="111.0" prefHeight="26.0" prefWidth="226.0" promptText="Nome" />
+            <TextField fx:id="tfCpf" layoutX="188.0" layoutY="153.0" prefHeight="26.0" prefWidth="226.0" promptText="CPF / CNPJ" />
+            <ComboBox fx:id="comboBox" layoutX="188.0" layoutY="195.0" prefHeight="26.0" prefWidth="226.0" promptText="Gênero" />
+            <TextField fx:id="tfData" layoutX="188.0" layoutY="239.0" prefHeight="26.0" prefWidth="226.0" promptText="Data de nascimento" />
+            <TextField fx:id="tfEmail" layoutX="187.0" layoutY="283.0" prefHeight="26.0" prefWidth="226.0" promptText="E-mail" />
+            <TextField fx:id="tfSenha" layoutX="188.0" layoutY="326.0" prefHeight="26.0" prefWidth="107.0" promptText="Senha" />
+            <TextField fx:id="tfConfirm_senha" layoutX="306.0" layoutY="326.0" prefHeight="26.0" prefWidth="107.0" promptText="Confirmar senha" />
+            <CheckBox fx:id="cbTermos" layoutX="188.0" layoutY="368.0" mnemonicParsing="false" text="Aceito os termos de uso" />
+            <Button fx:id="btPronto" layoutX="188.0" layoutY="402.0" mnemonicParsing="false" onAction="#onProntoButtonClick" prefHeight="26.0" prefWidth="226.0" text="Pronto" />
          </children>
       </Pane>
    </children>

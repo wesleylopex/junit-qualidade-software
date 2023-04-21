@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class HelloController {
-
-    //private static HelloController instance;
     public HelloController() {}
 
     @FXML
@@ -19,13 +17,11 @@ public class HelloController {
     @FXML
     private CheckBox cbTermos;
 
-    private String nome, cpf_cnpj, genero,email, senha, confir_senha, data;
-
-    private boolean cpf, cnpj, termos;
-
+    @FXML
+    private Button btPronto;
     @FXML
     void initialize() {
-        ObservableList<String> items = FXCollections.observableArrayList("Item 1", "Item 2", "Item 3");
+        ObservableList<String> items = FXCollections.observableArrayList("Masculino", "Feminino", "Outro");
         comboBox.setItems(items);
 
         ToggleGroup group = new ToggleGroup();
@@ -41,60 +37,37 @@ public class HelloController {
             tfData.clear();
             tfData.setDisable(true);
         });
+
+        this.checkElementsOnScreen();
+    }
+
+    private void checkElementsOnScreen () {
+        TesteInterface.buttonIsOnScreen(btPronto);
+        TesteInterface.textFieldIsOnScreen(tfNome);
+        TesteInterface.textFieldIsOnScreen(tfCpf);
+        TesteInterface.textFieldIsOnScreen(tfEmail);
+        TesteInterface.textFieldIsOnScreen(tfSenha);
+        TesteInterface.textFieldIsOnScreen(tfConfirm_senha);
+        TesteInterface.textFieldIsOnScreen(tfData);
+    }
+
+    private void checkTexts() {
+        TesteInterface.assertEquals("Nome", tfNome.getText());
+        TesteInterface.assertEquals("12345678910", tfCpf.getText());
+        TesteInterface.assertEquals("Masculino", comboBox.getValue());
+        TesteInterface.assertEquals("01/01/1111",tfData.getText());
+        TesteInterface.assertEquals("email@gmail.com", tfEmail.getText());
+        TesteInterface.assertEquals("senha123", tfSenha.getText());
+        TesteInterface.assertEquals("senha123", tfConfirm_senha.getText());
+        TesteInterface.assertEquals(true, cbTermos.isSelected());
+
+        if(rbCnpj.isSelected()) {
+            TesteInterface.assertEquals("", tfData.getText());
+        }
     }
 
     @FXML
     protected void onProntoButtonClick() {
-        this.nome = tfNome.getText();
-        this.cpf_cnpj = tfCpf.getText();
-        this.genero = comboBox.getValue();
-        this.email = tfEmail.getText();
-        this.senha = tfSenha.getText();
-        this.confir_senha = tfConfirm_senha.getText();
-        this.data = tfData.getText();
-        this.cpf = rbCpf.isSelected();
-        this.cnpj = rbCnpj.isSelected();
-        this.termos = cbTermos.isSelected();
-        TesteInterface.main(this);
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getCpf_cnpj() {
-        return cpf_cnpj;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public String getConfir_senha() {
-        return confir_senha;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public boolean isCpf() {
-        return cpf;
-    }
-
-    public boolean isCnpj() {
-        return cnpj;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public boolean isTermos() {
-        return termos;
+        this.checkTexts();
     }
 }
