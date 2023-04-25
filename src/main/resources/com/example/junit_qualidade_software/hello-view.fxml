@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:controller="com.example.junit_qualidade_software.HelloApplication" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.junit_qualidade_software.HelloController">
    <children>
-      <Pane layoutY="-1.0" prefHeight="502.0" prefWidth="600.0" style="-fx-background-color: #fafafa; -fx-border-radius: 20px;">
+      <Pane layoutY="-2.0" prefHeight="502.0" prefWidth="600.0" style="-fx-background-color: #fafafa; -fx-border-radius: 20px;">
          <children>
             <TextField layoutX="48.0" layoutY="221.0" prefHeight="26.0" prefWidth="226.0" promptText="Data de nascimento" />
-            <TextField layoutX="48.0" layoutY="93.0" prefHeight="26.0" prefWidth="226.0" promptText="Nome" />
+            <TextField fx:id="tfNome" layoutX="48.0" layoutY="93.0" prefHeight="26.0" prefWidth="226.0" promptText="Nome" />
             <TextField layoutX="47.0" layoutY="265.0" prefHeight="26.0" prefWidth="226.0" promptText="E-mail" />
             <TextField layoutX="48.0" layoutY="308.0" prefHeight="26.0" prefWidth="107.0" promptText="Senha" />
             <TextField layoutX="166.0" layoutY="308.0" prefHeight="26.0" prefWidth="107.0" promptText="Confirmar senha" />
@@ -22,10 +22,9 @@
             <TextField layoutX="48.0" layoutY="135.0" prefHeight="26.0" prefWidth="226.0" promptText="CPF" />
             <ComboBox fx:id="comboBox" layoutX="48.0" layoutY="177.0" prefHeight="26.0" prefWidth="226.0" promptText="Gênero" />
             <CheckBox layoutX="48.0" layoutY="350.0" mnemonicParsing="false" text="Aceito os termos de uso" />
-            <ImageView fitHeight="502.0" fitWidth="286.0" layoutX="320.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../../assets/alabaster-co-XOXfjsC87J0-unsplash.jpg" />
-               </image>
+            <!-- TODO: descobrir o motivo dessa imagem não aparecer -->
+            <ImageView fitHeight="502.0" fitWidth="286.0" layoutX="314.0" pickOnBounds="true">
+               <Image url="@../../../../../assets/image.jpeg" />
             </ImageView>
          </children>
       </Pane>

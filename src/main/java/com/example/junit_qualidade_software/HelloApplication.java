@@ -16,23 +16,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HelloApplication extends Application {
-    @FXML
-    private ComboBox<String> comboBox;
 
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        ObservableList<String> items = FXCollections.observableArrayList("Item 1", "Item 2", "Item 3");
-        comboBox.setItems(items);
+    public static void main(String[] args) {
+        Application.launch();
     }
 
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        Scene scene = new Scene(root, 600, 502);
+        Scene scene = new Scene(root, 600, 500);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
-    }
-    public static void main(String[] args) {
-        launch();
     }
 }
