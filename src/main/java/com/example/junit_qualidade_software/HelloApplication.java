@@ -16,7 +16,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HelloApplication extends Application {
-
     public static void main(String[] args) {
         Application.launch();
     }
@@ -25,7 +24,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 600, 500);
-        stage.setTitle("Hello!");
+        stage.setTitle("Cadastro");
         stage.setScene(scene);
         stage.show();
     }
