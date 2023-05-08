@@ -39,6 +39,12 @@ public class HelloController {
         });
 
         this.checkElementsOnScreen();
+
+        tfCpf.setText("12345678910");
+        tfEmail.setText("email@gmail.com");
+        tfSenha.setText("senha123");
+        tfConfirm_senha.setText("senha123");
+        tfData.setText("01/01/1111");
     }
 
     private void checkElementsOnScreen () {
